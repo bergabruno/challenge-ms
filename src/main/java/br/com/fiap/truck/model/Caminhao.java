@@ -23,8 +23,6 @@ public class Caminhao {
 
     private String nome;
 
-    //Atributos padrão de um caminhao: - caso queira upgrade -> upgrade (nao altera no banco)
-
     private String modelo;
 
     private String motor;
@@ -41,9 +39,6 @@ public class Caminhao {
 
     private String velMedia;
 
-    //um caminhao pode ter varios clientes
+    @OneToMany(mappedBy = "caminhao", cascade = CascadeType.ALL)
     private List<Cliente> clientes;
-
-    private Upgrade upgrade;
-
 }

@@ -21,14 +21,14 @@ public class Cliente {
 
     private String nome;
 
+    @Column(name = "numcelular")
     private String numeroCelular;
 
     private String email;
 
-//    um cliente pode ter muitos caminhoes - porem dps eu arrumo
+    @ManyToOne
     private Caminhao caminhao;
 
+    @OneToOne(cascade = CascadeType.ALL)
     private Upgrade upgrade;
-
-    //endereco
 }

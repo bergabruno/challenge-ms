@@ -16,22 +16,25 @@ public class Upgrade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Caminhao caminhao;
-
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "upgrade")
+    @JoinColumn(name = "cliente_id", referencedColumnName = "id")
     private Cliente cliente;
-
-//    if motor == null ? this.motor = caminhao.getMotor()
+//    motor == null ? this.motor = caminhao.getMotor()
 //    Um upgrade tem somente um motor, mas um motor pode estar em varios upgrades
 //    vai levar o ID do motor escolhido
-//    @OneToMany
+    @ManyToOne
     private Motor motor;
 
+    @ManyToOne
     private Cor cor;
 
+    @ManyToOne
     private Roda roda;
 
+    @ManyToOne
     private Carga cargas;
 
+    @ManyToOne
     private Eixo eixos;
 
     private String pesoMaximo;

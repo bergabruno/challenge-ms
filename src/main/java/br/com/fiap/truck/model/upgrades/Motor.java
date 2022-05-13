@@ -1,12 +1,16 @@
 package br.com.fiap.truck.model.upgrades;
 
+import br.com.fiap.truck.model.Cliente;
+import br.com.fiap.truck.model.Upgrade;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.sql.Update;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "tb_motores")
+@Table(name = "tb_motor")
 @Getter
 @Setter
 public class Motor {
@@ -16,4 +20,7 @@ public class Motor {
     private Integer id;
 
     private String descricao;
+
+    @OneToMany(mappedBy = "motor", cascade = CascadeType.ALL)
+    private List<Upgrade> upgrades;
 }
