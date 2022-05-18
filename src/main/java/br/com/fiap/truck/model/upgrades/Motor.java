@@ -1,5 +1,6 @@
 package br.com.fiap.truck.model.upgrades;
 
+import br.com.fiap.truck.model.Caminhao;
 import br.com.fiap.truck.model.Cliente;
 import br.com.fiap.truck.model.Upgrade;
 import lombok.Getter;
@@ -23,4 +24,7 @@ public class Motor {
 
     @OneToMany(mappedBy = "motor", cascade = CascadeType.ALL)
     private List<Upgrade> upgrades;
+
+    @OneToMany(mappedBy = "motor", cascade = CascadeType.ALL)
+    private List<Caminhao> caminhoes;
 }

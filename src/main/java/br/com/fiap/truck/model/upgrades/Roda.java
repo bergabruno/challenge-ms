@@ -1,5 +1,6 @@
 package br.com.fiap.truck.model.upgrades;
 
+import br.com.fiap.truck.model.Caminhao;
 import br.com.fiap.truck.model.Upgrade;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,4 +22,7 @@ public class Roda {
 
     @OneToMany(mappedBy = "motor", cascade = CascadeType.ALL)
     private List<Upgrade> upgrades;
+
+    @OneToMany(mappedBy = "motor", cascade = CascadeType.ALL)
+    private List<Caminhao> caminhoes;
 }
