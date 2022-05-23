@@ -42,8 +42,15 @@ public class UpgradeServiceImpl implements UpgradeService {
     }
 
     @Override
-    public Upgrade insert(UpgradeRequestDTO UpgradeRequestDTO) {
-        return null;
+    public Upgrade insert(UpgradeRequestDTO upgradeRequestDTO) {
+        ModelMapper mapper = new ModelMapper();
+        if (upgradeRequestDTO == null || upgradeRequestDTO.getCliente().getCaminhao() == null) {
+            throw new RuntimeException("Poxa, o cliente nao possui nenhum caminhao!");
+        }
+        Upgrade upgrade = mapper.map(upgradeRequestDTO, Upgrade.class);
+        upgrade = upgradeRepository.save(upgrade);
+
+        return upgrade;
     }
 
     @Override
