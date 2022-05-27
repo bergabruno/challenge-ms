@@ -20,7 +20,6 @@ public class CaminhaoController {
     @Autowired
     CaminhaoService caminhaoService;
 
-
     @PostMapping("/inserir")
     public CaminhaoResponseDTO inserir(@RequestBody @Valid CaminhaoRequestDTO caminhaoRequestDTO){
         ModelMapper mapper = new ModelMapper();

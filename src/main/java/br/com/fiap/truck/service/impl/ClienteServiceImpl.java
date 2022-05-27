@@ -5,9 +5,11 @@ import br.com.fiap.truck.model.dto.ClienteRequestDTO;
 import br.com.fiap.truck.repository.ClienteRepository;
 import br.com.fiap.truck.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ClienteServiceImpl implements ClienteService {
 
     @Autowired

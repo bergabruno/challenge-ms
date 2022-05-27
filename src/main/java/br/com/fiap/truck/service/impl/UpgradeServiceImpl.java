@@ -4,10 +4,13 @@ import br.com.fiap.truck.model.Upgrade;
 import br.com.fiap.truck.model.dto.UpgradeRequestDTO;
 import br.com.fiap.truck.repository.UpgradeRepository;
 import br.com.fiap.truck.service.UpgradeService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UpgradeServiceImpl implements UpgradeService {
 
     @Autowired

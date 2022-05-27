@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulario</title>
+    
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: rgb(24, 49, 68);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;  
+}
+
+input[type=submit]:hover {
+  background-color: rgb(24, 49, 68);
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+label{
+	font-size: 30px;
+}
+
+.bottom{
+	font-size: 30px	;
+}
+
+.texto{
+	font-size: 30px;
+}
+
+h1{
+    text-align: center;
+    font-size: 25px;
+}
+</style>
+</head>
+<body>
+
+    <div>
+			<form class="forms" action="cadastrarCliente" method="post">  
+
+            <label class="data" for="nome"> Nome: </label>   
+            <input type="text" name="nome" class="texto" required>   
+
+            <label class="data" for="celular"> Numero de celular: </label> 
+            <input type="text" name="celular" class="texto" required>  
+            
+            <label class="data" for="email"> Email: </label>  
+            <input type="text" name="email" class="texto" required>  
+
+
+            <input class="bottom" type="submit" value="Enviar dados por email">
+        </form>
+
+        <h1>Realizando o preenchimento desse formulário, você receberá em seu email as definições do seu caminhão</h1>
+        <h2></h2>
+        </div>
+
+</body>
+</html>

@@ -2,7 +2,6 @@ package br.com.fiap.truck.controller;
 
 import br.com.fiap.truck.model.Upgrade;
 import br.com.fiap.truck.model.dto.UpgradeRequestDTO;
-import br.com.fiap.truck.model.dto.UpgradeResponseDTO;
 import br.com.fiap.truck.service.UpgradeService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
