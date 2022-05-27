@@ -33,13 +33,13 @@ public class Caminhao {
     private Cor cor;
 
     @ManyToOne
-    private Roda roda;
+    private Roda rodas;
 
     @ManyToOne
-    private Carga cargas;
+    private Carga carga;
 
     @ManyToOne
-    private Eixo eixos;
+    private Eixo eixo;
 
     private String pesoMaximo;
 

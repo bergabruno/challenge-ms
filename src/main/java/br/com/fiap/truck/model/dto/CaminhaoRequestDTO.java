@@ -3,10 +3,13 @@ package br.com.fiap.truck.model.dto;
 import br.com.fiap.truck.model.Cliente;
 
 import java.util.List;
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter@Setter
+@AllArgsConstructor
 public class CaminhaoRequestDTO {
 
     private String ano;

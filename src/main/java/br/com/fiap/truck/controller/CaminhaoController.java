@@ -8,9 +8,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -37,13 +39,26 @@ public class CaminhaoController {
     }
 
     @GetMapping
-    public List<CaminhaoRequestDTO> listar(){
-        List<Caminhao> caminhoes = caminhaoService.allCaminhoes();
+    public ModelAndView listar(){
+        ModelAndView mav = new ModelAndView("index.html");
+//        List<Caminhao> caminhoes = caminhaoService.allCaminhoes();
 
         ModelMapper mapper = new ModelMapper();
-        List<CaminhaoRequestDTO> caminhoesDTOs = new ArrayList<>();
-        mapper.map(caminhoes, caminhoesDTOs);
-        return caminhoesDTOs;
+        List<Caminhao> caminhoesDTOs = new ArrayList<>();
+//        mapper.map(caminhoes, caminhoesDTOs);
+//        return caminhoesDTOs;
+        Caminhao caminhaoRequestDTO = new Caminhao(1, "2030", "V8", "V8", null, null,
+                null, null, null, "teste", "teste", null);
+        Caminhao caminhaoRequestDTO2 = new Caminhao(1, "2050", "V8", "V8", null, null,
+                null, null, null, "teste", "teste", null);
+        Caminhao caminhaoRequestDTO3 = new Caminhao(1, "2040", "V8", "V8", null, null,
+                null, null, null, "teste", "teste", null);
+        caminhoesDTOs.addAll(Arrays.asList(caminhaoRequestDTO, caminhaoRequestDTO2, caminhaoRequestDTO3));
+
+        //Professor queria que a cada 3 ele gerasse uma nova div da lista, para criar la um novo
+        mav.addObject("getCaminhoes", caminhoesDTOs);
+        return mav;
+
     }
 
     
