@@ -5,14 +5,15 @@ import br.com.fiap.truck.model.dto.CaminhaoRequestDTO;
 import br.com.fiap.truck.repository.CaminhaoRepository;
 import br.com.fiap.truck.service.CaminhaoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CaminhaoServiceImpl implements CaminhaoService {
 
     @Autowired
     private CaminhaoRepository caminhaoRepository;
-
 
     @Override
     public Caminhao getById(Integer id) {

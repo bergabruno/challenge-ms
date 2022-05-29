@@ -4,10 +4,13 @@ import br.com.fiap.truck.model.Upgrade;
 import br.com.fiap.truck.model.dto.UpgradeRequestDTO;
 import br.com.fiap.truck.repository.UpgradeRepository;
 import br.com.fiap.truck.service.UpgradeService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UpgradeServiceImpl implements UpgradeService {
 
     @Autowired
@@ -42,8 +45,15 @@ public class UpgradeServiceImpl implements UpgradeService {
     }
 
     @Override
-    public Upgrade insert(UpgradeRequestDTO UpgradeRequestDTO) {
-        return null;
+    public Upgrade insert(UpgradeRequestDTO upgradeRequestDTO) {
+        ModelMapper mapper = new ModelMapper();
+        if (upgradeRequestDTO == null || upgradeRequestDTO.getCliente().getCaminhao() == null) {
+            throw new RuntimeException("Poxa, o cliente nao possui nenhum caminhao!");
+        }
+        Upgrade upgrade = mapper.map(upgradeRequestDTO, Upgrade.class);
+        upgrade = upgradeRepository.save(upgrade);
+
+        return upgrade;
     }
 
     @Override

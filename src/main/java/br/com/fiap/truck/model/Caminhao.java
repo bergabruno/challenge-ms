@@ -1,5 +1,6 @@
 package br.com.fiap.truck.model;
 
+import br.com.fiap.truck.model.upgrades.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,15 +26,20 @@ public class Caminhao {
 
     private String modelo;
 
-    private String motor;
+    @ManyToOne
+    private Motor motor;
 
-    private String cor;
+    @ManyToOne
+    private Cor cor;
 
-    private String rodas;
+    @ManyToOne
+    private Roda rodas;
 
-    private String carga;
+    @ManyToOne
+    private Carga carga;
 
-    private String eixo;
+    @ManyToOne
+    private Eixo eixo;
 
     private String pesoMaximo;
 

@@ -1,16 +1,8 @@
 package br.com.fiap.truck.model.dto;
 
-import br.com.fiap.truck.model.Cliente;
+public class CaminhaoResponseDTO {
 
-import java.util.List;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter@Setter
-@AllArgsConstructor
-public class CaminhaoRequestDTO {
+    private int id;
 
     private String ano;
 
@@ -31,5 +23,4 @@ public class CaminhaoRequestDTO {
     private String pesoMaximo;
 
     private String velMedia;
-
 }
