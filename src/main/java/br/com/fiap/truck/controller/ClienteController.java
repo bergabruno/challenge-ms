@@ -7,6 +7,7 @@ import br.com.fiap.truck.service.ClienteService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -49,6 +50,13 @@ public class ClienteController {
     @DeleteMapping("/{id}")
     public void apagar(@PathVariable Integer id){
         clienteService.deleteById(id);
+    }
+
+    @GetMapping("/cadastrar")
+    public ModelAndView formulario(){
+        ModelAndView modelAndView = new ModelAndView("forms.html");
+
+        return modelAndView;
     }
 
 }
